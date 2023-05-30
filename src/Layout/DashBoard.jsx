@@ -13,10 +13,12 @@ import {
   FaUser,
 } from "react-icons/fa";
 import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
 
 const DashBoard = () => {
   const [cart] = useCart();
-  const isAdmin = true;
+  // const isAdmin = true;
+  const isAdmin = useAdmin()
 
   return (
     <div className="drawer drawer-mobile ">
