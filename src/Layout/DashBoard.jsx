@@ -7,7 +7,6 @@ import {
   FaHome,
   FaBars,
   FaHamburger,
-  FaUtensilSpoon,
   FaUtensils,
   FaBook,
   FaUser,
@@ -17,20 +16,19 @@ import useAdmin from "../Hooks/useAdmin";
 
 const DashBoard = () => {
   const [cart] = useCart();
-  // const isAdmin = true;
-  const isAdmin = useAdmin()
+  const [isAdmin] = useAdmin()
 
   return (
     <div className="drawer drawer-mobile ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
-        <Outlet></Outlet>
+      <div className="drawer-content">
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
+          className="btn btn-outline drawer-button lg:hidden"
+          >
+          <FaBars></FaBars>
         </label>
+          <Outlet></Outlet>
       </div>
       <div className="drawer-side ">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
@@ -43,12 +41,12 @@ const DashBoard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/reservations">
-                  <FaUtensils></FaUtensils> Add Items
+                <NavLink to="/dashboard/addItem">
+                  <FaUtensils></FaUtensils> Add an Item
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
+                <NavLink to="/dashboard/manageItems">
                   <FaWallet></FaWallet> Manage Items
                 </NavLink>
               </li>
