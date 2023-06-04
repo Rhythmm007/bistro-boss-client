@@ -44,7 +44,7 @@ const MyCart = () => {
       </Helmet>
       <div className="uppercase font-semibold flex justify-evenly h-[60px] items-center">
         <h3>Total Items: {cart.length}</h3>
-        <h3>Total Price: ${totalPrice}</h3>
+        <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
         <Link to='/dashboard/payment'><button className="btn btn-warning btn-sm">pay</button></Link>
       </div>
       <div className="overflow-x-auto w-full">

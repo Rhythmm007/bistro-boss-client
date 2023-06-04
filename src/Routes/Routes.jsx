@@ -8,7 +8,6 @@ import Order from "../Pages/Order/Order/Order"
 import Login from "../Pages/Login/Login"
 import SignUp from "../Pages/signUp/signUp"
 import PrivateRoute from "./PrivateRoute"
-import Secret from "../Pages/Shared/Secret/Secret"
 import DashBoard from "../Layout/DashBoard"
 import MyCart from "../Pages/DashBoard/MyCart/MyCart"
 import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers"
@@ -16,6 +15,8 @@ import AddItem from "../Pages/DashBoard/AddItem/AddItem"
 import AdminRoute from "../Routes/AdminRoute"
 import ManageItems from "../Pages/DashBoard/ManageITems/ManageItems"
 import Payment from "../Pages/DashBoard/Payment/Payment"
+import UserHome from "../Pages/DashBoard/UserHome/UserHome"
+import AdminHome from "../Pages/DashBoard/AdminHome/AdminHome"
 
 export const router = createBrowserRouter([
     {
@@ -41,10 +42,6 @@ export const router = createBrowserRouter([
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
-            },
-            {
-                path: '/secret',
-                element: <PrivateRoute><Secret></Secret></PrivateRoute>
             }
         ],
     },
@@ -54,6 +51,10 @@ export const router = createBrowserRouter([
         children: [
             // users routes
             {
+                path: 'userhome',
+                element: <UserHome></UserHome>
+            },
+            {
                 path: 'mycart',
                 element: <MyCart></MyCart>
             },
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
                 element: <Payment></Payment>
             },
             // Admin routes
+            {
+                path: 'adminhome',
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
             {
                 path: 'allusers',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
